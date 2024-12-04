@@ -1,18 +1,25 @@
-Package: RnaSeqTutorialXX
+Package: RnaSeqTutorial03
 Type: Package
-Title: XXX
+Title: Differential Gene Expression Analysis
 Version: 1.0.0
 Author: Nicolas Delhomme [aut, cre]
 Maintainer: Nicolas Delhomme <nicolas.delhomme@umu.se>
-Description: A package containing the XXX tutorial in a series that go from the Exploratory Data Analysis
+Description: A package containing the third tutorial in a series that go from the Exploratory Data Analysis
     to the Differential Gene Expression, Differential Transcript Usage and Gene Set Enrichment Analysis
 License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
 Encoding: UTF-8
 LazyData: true
 Depends:
     R (>= 4.4.0),
+    ComplexHeatmap (>= 2.22.0),
+    DESeq2 (>= 1.46.0),
+    ggvenn (>= 0.1.10),
     here (>= 1.0.1),
-    learnr (>= 0.11.5)
+    learnr (>= 0.11.5),
+    MASS (>= 7.3-61),
+    readr (>= 2.1.5),
+    tidyverse (>= 2.0.0),
+    vsn (>= 3.74.0)
 Suggests: BiocStyle, knitr, rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 7.3.2

@@ -1,23 +1,6 @@
-# RnaSeqTutorialXX
+# RnaSeqTutorial03
 
-## Using this template
-
-1. Edit this README, change the title
-2. Update the installation info (dependencies, github directory), you can use the code in R/RnaSeqTutorials-package.R to build the dependencies list.
-3. Replace all XXX and XX with the tutorial and package name, respectively
-4. Edit the R/RnaSeqTutorials-package.R file, line 1, 23, 30 and 34
-5. Edit the DESCRIPTION, change the XX and XXX and add the dependencies
-6. Configure the project option to enable Roxygen to build the doc
-7. Build the doc with Roxygen
-8. Check the package
-9. Push to GH
-10. Try to install using the instructions
-11. (Fix and retry)
-12. Remove this first section :-)
-
----
-
-TITLE TO CHANGE
+Differential Gene Expression Analysis
 
 ## Installation
 
@@ -25,14 +8,14 @@ In R do the following to install the dependencies
 
 ```R
 if(!require("BiocManager")) {install.packages("BiocManager")}
-BiocManager::install(c("here","learnr"))
+BiocManager::install(c("ComplexHeatmap","DESeq2","ggvenn","here","learnr","MASS","readr","tidyverse","vsn"))
 ```
 
 Then install the package using _e.g._ `pak`
 
  ```R
  if(!require("pak")){BiocManager::install("pak")}
- pak::pkg_install("UPSCb/Tutorial_XXX")
+ pak::pkg_install("UPSCb/Tutorial_03_differential_gene_expression")
  ```
 
 ## Getting started
@@ -51,7 +34,7 @@ This is the first in a series of tutorials.
 To start the tutorial run:
 
 ```{r tutorial}
-learnr::run_tutorial("XXX", package = "RnaSeqTutorialXX")
+learnr::run_tutorial("03_differential_gene_expression", package = "RnaSeqTutorial03")
 ```
 
 ## Accessing the code
@@ -61,11 +44,11 @@ learnr::run_tutorial("XXX", package = "RnaSeqTutorialXX")
 The tutorial is available as `.Rmd` files in the `tutorials` directory:
 
 ```{r tutorial list}
-dir(system.file(package="RnaSeqTutorialXX","tutorials"))
+dir(system.file(package="RnaSeqTutorial03","tutorials"))
 ```
 
 ```{r tutorial paths}
-list.files(path=system.file(package="RnaSeqTutorialXX","tutorials"),
+list.files(path=system.file(package="RnaSeqTutorial03","tutorials"),
            pattern="*.Rmd",
            recursive=TRUE)
 ```
@@ -75,7 +58,7 @@ list.files(path=system.file(package="RnaSeqTutorialXX","tutorials"),
 There may be script(s) available in the `scripts` directory:
 
 ```{r script paths}
-list.files(path=system.file(package="RnaSeqTutorialXX","scripts"),
+list.files(path=system.file(package="RnaSeqTutorial03","scripts"),
            pattern="*.R",
            recursive=TRUE)
 ```
