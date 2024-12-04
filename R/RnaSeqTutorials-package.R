@@ -18,7 +18,7 @@
 #
 #' @title RnaSeqTutorials package
 #' @section Tutorials:
-#' This is the first in a series of tutorials
+#' This is the third in a series of tutorials
 #' \itemize{
 #' \item\code{03_differential_gene_expression} a differential gene expression tutorial using DESeq2
 #' }
