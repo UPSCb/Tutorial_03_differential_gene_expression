@@ -18,6 +18,21 @@ Then install the package using _e.g._ `pak`
  pak::pkg_install("UPSCb/Tutorial_03_differential_gene_expression")
  ```
 
+### Troubleshooting
+
+If you get an error message stating: `could not find tools necessary to compile a package`, then:
+
+* on **Windows**, you will need to install [Rtools](https://cran.r-project.org/bin/windows/Rtools/), select the right version for you R installation.
+
+* on **Mac OS**, make sure that xcode is installed. In the terminal, run `xcode-select --install`.
+
+If the above do not resolve the installation issue, then run this instead:
+
+```R
+if(!require("pak")){BiocManager::install("devtools")}
+devtools::install_github("UPSCb/Tutorial_03_differential_gene_expression")
+```
+
 ## Getting started
 
 This is the first in a series of tutorials.
