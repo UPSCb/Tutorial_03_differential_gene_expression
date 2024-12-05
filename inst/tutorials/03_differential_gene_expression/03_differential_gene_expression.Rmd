@@ -590,18 +590,28 @@ Then in the `Design formula` text box enter the following formulas and look at t
 3. `~time + treatment`
 4. `~time * treatment`
 
-Below are some example plots, showing the different contributions of the variables (as arrows) for the different contrasts. The plots represent the expression values of a single gene (as black dots) in different samples, separated by sample groups. These are meant as a visual help to what is reported in the `ExploreModelMatrix` app. Note the image are from a different studies where the variables are treatment and genotype.
+Below are some example plots, showing the different contributions of the variables (as arrows) for the different contrasts. The plots represent the expression values of a single gene (as black dots) in different samples, separated by sample groups. These are meant as a visual help to what is reported in the `ExploreModelMatrix` [app](http://terra.upsc.se/ExploreModelMatrix/). Note the image are from a different studies where the variables are treatment and genotype.
+You can also access ExploreModelMatrix with the following code in R:
 
----
+```{r ExploreModelMatrix, echo=TRUE, eval=FALSE}
+pacman::p_load("ExploreModelMatrix")
+ExploreModelMatrix(sampleData = readr::read_tsv(
+  here::here("RnaSeqTutorials/inst/tutorials/03_differential_gene_expression/www/samples_table.tsv")),
+  designFormula = ~ time * treatment)
+
+```
+
+
 ~$0 + treatment$
 
-![`~0 + treatment`](images/design_0_treatment.png){width=700px}
+![`~0+treatment`](images/design_0_treatment.png){width=700px}
+
 
 Here, we force the linear model to go through the origin (0), so there is no condition used as a reference. Rather both treatments are compared to the origin. To compare treatment and control, we would subtract `treatmenttreated` from `treatmentcontrol`. 
 
 **Note:** remember our data have been log-transformed so the ratio $treatmenttreated / treatmentcontrol$ is $treatmenttreated - treatmentcontrol$ as a log-ratio. 
 
----
+
 ~$treatment$
 
 ![`~treatment`](images/design_treatment.png){width=700px}
@@ -619,7 +629,7 @@ quiz(caption="How do the two formula compare?",
 
 **Note:** The default reference is devised by the alphabetic order of the variable, hence the reason why `control` is the default in this image and the treatment `G02` in our data.
 
----
+
 ~$treatment + genotype$
 
 ![`~treatment+genotype`](images/design_treatment_time.png){width=700px}
@@ -634,7 +644,7 @@ quiz(caption="Blocking...",
               answer("Removing a batch effect",correct=TRUE)))
 ```
 
----
+
 ~$treatment * genotype$
 
 ![`~treatment * genotype`](images/design_treatment_by_time.png){width=700px}
@@ -649,7 +659,7 @@ quiz(caption="Comparing treatment in genotypes",
               answer("is half as effective as in treatment A")))
 ```
 
----
+
 
 A final note on contrasts. They are (to me at least) headache generators. And that's where the `ExploreModelMatrix`, as well as the vignettes of the `DESeq2` and `edgeR` packages are really useful. I also always cross-validate my results, by looking at heatmaps and validating the log ratio by taking a few example genes and doing the maths.
 
@@ -738,6 +748,7 @@ G03_vs_G02_at_T03 <- results(dds,name="treatment_G03_vs_G02")
 
 ```{r G03_vs_G02_at_T03, include=FALSE, eval=TRUE}
 G03_vs_G02_at_T03 <- readRDS(file=here("tutorials/03_differential_gene_expression/www/G03_vs_G02_at_T03.rds"))
+dds <- readRDS(here("tutorials/03_differential_gene_expression/www/dds-post.rds"))
 ```
 
 Excellent. We could now export the results to a file for future reference / use. You would do this as follows:
