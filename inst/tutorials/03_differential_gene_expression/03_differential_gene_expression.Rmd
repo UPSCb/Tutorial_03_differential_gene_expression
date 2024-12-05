@@ -590,7 +590,7 @@ Then in the `Design formula` text box enter the following formulas and look at t
 3. `~time + treatment`
 4. `~time * treatment`
 
-Below are some example plots, showing the different contributions of the variables (as arrows) for the different contrasts. The plots represent the expression values of a single gene (as black dots) in different samples, separated by sample groups. These are meant as a visual help to what is reported in the `ExploreModelMatrix` [app](http://terra.upsc.se/ExploreModelMatrix/). Note the image are from a different studies where the variables are treatment and genotype.
+Below are some example plots, showing the different contributions of the variables (as arrows) for the different contrasts. The plots represent the expression values of a single gene (as black dots) in different samples, separated by sample groups. These are meant as a visual help to what is reported in the `ExploreModelMatrix` app. Note the image are from a different studies where the variables are treatment and genotype.
 You can also access ExploreModelMatrix with the following code in R:
 
 ```{r ExploreModelMatrix, echo=TRUE, eval=FALSE}
