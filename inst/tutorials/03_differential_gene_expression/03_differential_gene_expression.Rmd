@@ -595,7 +595,7 @@ Below are some example plots, showing the different contributions of the variabl
 ---
 ~$0 + treatment$
 
-![`~0 + treatment`](images/design_0_treatment.png){width=80%}
+![`~0 + treatment`](images/design_0_treatment.png){width=700px}
 
 Here, we force the linear model to go through the origin (0), so there is no condition used as a reference. Rather both treatments are compared to the origin. To compare treatment and control, we would subtract `treatmenttreated` from `treatmentcontrol`. 
 
@@ -604,7 +604,7 @@ Here, we force the linear model to go through the origin (0), so there is no con
 ---
 ~$treatment$
 
-![`~treatment`](images/design_treatment.png){width=80%}
+![`~treatment`](images/design_treatment.png){width=700px}
 
 Here, we drop the origin (0) from the formula, so one condition will be used as the reference. The contrasts returned by `R` are directly compared to that reference.
 
@@ -622,7 +622,7 @@ quiz(caption="How do the two formula compare?",
 ---
 ~$treatment + genotype$
 
-![`~treatment+genotype`](images/design_treatment_time.png){width=80%}
+![`~treatment+genotype`](images/design_treatment_time.png){width=700px}
 
 Here we look at both variables, as if they were **independent**. This is a design sometimes called a `block` design. Indeed, as the default contrast returned by `R` is the last one, _i.e._ the one for the second variable, it corresponds to having effectively blocked the effect of the first one.
 
@@ -637,7 +637,7 @@ quiz(caption="Blocking...",
 ---
 ~$treatment * genotype$
 
-![`~treatment * genotype`](images/design_treatment_by_time.png){width=80%}
+![`~treatment * genotype`](images/design_treatment_by_time.png){width=700px}
 
 Here, and that is probably the most common case, we **cannot** assume that both variables are independent, so we factored in an interaction term. From the image it is obvious that the effects of the treatment in the genotype A (blue) and the effect of the genotype B among control samples (red) do not explain the expression values observed in the treated genotype B condition. By summing the contribution of red and blue, we can derive the effect of the treatment in genotype B (green). 
 
@@ -657,7 +657,7 @@ There are different ways of writing contrasts; what I have described above is th
 
 ~$0 + condition$
 
-![~0+condition](images/design_0_condition.png){width=80%}
+![~0+condition](images/design_0_condition.png){width=700px}
 
 ### Applying contrasts
 

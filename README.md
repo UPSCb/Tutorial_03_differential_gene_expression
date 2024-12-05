@@ -20,7 +20,7 @@ Then install the package using _e.g._ `pak`
 
 ## Getting started
 
-This is the first in a series of tutorials.
+This is the third in a series of tutorials.
 
 1. 01_data_science_intro: an introduction to data science using the `palmerpenguins` package
 2. 02_exploratory_data_analysis: the exploratory data analysis of a public RNA-Seq dataset
