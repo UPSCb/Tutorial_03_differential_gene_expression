@@ -15,6 +15,7 @@ Depends:
     DESeq2 (>= 1.46.0),
     ggvenn (>= 0.1.10),
     here (>= 1.0.1),
+    LSD (>= 4.1.0),
     learnr (>= 0.11.5),
     MASS (>= 7.3-61),
     readr (>= 2.1.5),
