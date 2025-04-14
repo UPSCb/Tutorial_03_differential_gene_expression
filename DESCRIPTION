@@ -12,7 +12,7 @@ LazyData: true
 Depends:
     R (>= 4.4.0),
     ComplexHeatmap (>= 2.20.0),
-    DESeq2 (>= 1.46.0),
+    DESeq2 (>= 1.44.0),
     ggvenn (>= 0.1.10),
     here (>= 1.0.1),
     LSD (>= 4.1.0),
