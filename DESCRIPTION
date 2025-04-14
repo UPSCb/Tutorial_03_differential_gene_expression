@@ -20,7 +20,7 @@ Depends:
     MASS (>= 7.3-61),
     readr (>= 2.1.5),
     tidyverse (>= 2.0.0),
-    vsn (>= 3.74.0)
+    vsn (>= 3.72.0)
 Suggests: BiocStyle, knitr, rmarkdown
 VignetteBuilder: knitr
 RoxygenNote: 7.3.2
