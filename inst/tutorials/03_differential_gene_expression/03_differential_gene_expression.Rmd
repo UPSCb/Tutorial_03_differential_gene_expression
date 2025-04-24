@@ -595,8 +595,16 @@ You can also access ExploreModelMatrix with the following code in R:
 
 ```{r ExploreModelMatrix, echo=TRUE, eval=FALSE}
 pacman::p_load("ExploreModelMatrix")
-ExploreModelMatrix(sampleData = readr::read_tsv(
-  here::here("RnaSeqTutorials/inst/tutorials/03_differential_gene_expression/www/samples_table.tsv")),
+data <-  tibble(
+  sample_id = c("SRR5223499", "SRR5223500", "SRR5223504", "SRR5223505", 
+                "SRR5223521", "SRR5223522", "SRR5223524", "SRR5223542", 
+                "SRR5223543", "SRR5223546", "SRR5223547", "SRR5223570"),
+  replicate = c("A", "A", "A", "A", "B", "B", "B", "D", "D", "D", "D", "B"),
+  time = c("T03", "T04", "T03", "T04", "T03", "T04", "T03", "T03", "T04", "T03", "T04", "T04"),
+  treatment = c("G02", "G02", "G03", "G03", "G02", "G02", "G03", "G02", "G02", "G03", "G03", "G03")
+)
+
+ExploreModelMatrix(sampleData = data,
   designFormula = ~ time * treatment)
 
 ```
