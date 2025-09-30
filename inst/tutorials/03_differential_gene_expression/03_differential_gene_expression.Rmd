@@ -824,6 +824,41 @@ Question: Take a minute to reflect on how that is different from `timeT04.treatm
 
 Answer: (T04 at G03 of expression the to contribution specific the, term interaction an is timeT04.treatmentG03 that is answer the) <-- read the answer from right to left.
 
+#### Changing the baseline
+
+When you have many variables (es: time point * genotype * treatment) it can get very difficult to extract the precise contrast you want. In these cases, it can be easier to just change the baseline to coincide with one of the two conditions you want to compare, so that setting the final contrasts results easier.
+
+If we do this, it is necessary to repeat the DESeq(dds) step.
+
+Knowing that the "relevel" functionc an change the baseline in a dds object, try to change the baseline for time to T04 and then extract the genes differentially expressed between T04G03 and T04G02
+
+
+```{r newbaseline, exercise=TRUE, exercise.eval=TRUE, exercise.setup="G03_vs_G02_at_T03"}
+
+```
+
+```{r newbaseline-hint-1}
+?relevel
+dds <- DESeq(dds)
+resultsNames(dds)
+?results
+```
+
+```{r newbaseline-hint-2}
+dds$time <- relevel(dds$time, ref="T04")
+dds <- DESeq(dds)
+resultsNames(dds)
+?results
+```
+
+```{r newbaseline-solution}
+dds$time <- relevel(dds$time, ref="T04")
+dds <- DESeq(dds)
+resultsNames(dds)
+res <- results(dds, name="treatment_G03_vs_G02")
+```
+
+
 As you can see, there are multiple ways to write contrasts, which is why it is important (IMO) to visualise the results and assess whether we got the contrasts right.
 
 #### Assessment plots
