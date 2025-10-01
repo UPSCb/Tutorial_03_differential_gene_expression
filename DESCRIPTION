@@ -1,7 +1,7 @@
 Package: RnaSeqTutorial03
 Type: Package
 Title: Differential Gene Expression Analysis
-Version: 1.0.0
+Version: 1.1.0
 Author: Nicolas Delhomme [aut, cre]
 Maintainer: Nicolas Delhomme <nicolas.delhomme@umu.se>
 Description: A package containing the third tutorial in a series that go from the Exploratory Data Analysis
